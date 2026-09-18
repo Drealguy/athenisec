@@ -1,4 +1,5 @@
 import { RevealGroup } from "@/components/Reveal";
+import ScrollFillText from "@/components/ScrollFillText";
 
 function RefreshIcon({ className = "" }: { className?: string }) {
   return (
@@ -109,10 +110,10 @@ export default function Services() {
           Confidence, resilience, and strategic precision
         </span>
 
-        <h2 className="font-heading mt-4 max-w-4xl text-3xl leading-[1.15] font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl lg:text-5xl">
-          Discover compliance solutions shaped by trust, precision, and
-          long-term strategic <span className="text-gray-300">value.</span>
-        </h2>
+        <ScrollFillText
+          text="Discover compliance solutions shaped by trust, precision, and long-term strategic value."
+          className="font-heading mt-4 max-w-4xl text-3xl leading-[1.15] font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl lg:text-5xl"
+        />
 
         {/* Bordered grid: cards share hairlines instead of sitting in gaps. */}
         <RevealGroup className="mt-14 grid grid-cols-1 border-t border-l border-gray-200 sm:grid-cols-2 lg:grid-cols-3">

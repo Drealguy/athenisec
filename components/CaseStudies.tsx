@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ScrollFillText from "@/components/ScrollFillText";
 
 const CASE_STUDIES = [
   {
@@ -46,10 +47,10 @@ export default function CaseStudies() {
             <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-brand" />
             Proven outcomes, audited and maintained
           </span>
-          <h2 className="font-heading text-3xl leading-[1.15] font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl lg:text-5xl">
-            See how we&apos;ve helped companies achieve and maintain
-            compliance.
-          </h2>
+          <ScrollFillText
+            text="See how we’ve helped companies achieve and maintain compliance."
+            className="font-heading text-3xl leading-[1.15] font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl lg:text-5xl"
+          />
         </div>
 
         {/* Each row sticks, so the next one scrolls up and overlaps it. The
