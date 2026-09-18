@@ -119,7 +119,7 @@ export default function Hero() {
             />
             {/* Blends the photo into the copy column on desktop, and softens
                 the seam above it when stacked on mobile. */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#001238_0%,rgba(0,18,56,0.75)_10%,rgba(0,18,56,0.25)_28%,transparent_52%)] lg:bg-[linear-gradient(to_right,#001238_0%,rgba(0,18,56,0.94)_9%,rgba(0,18,56,0.72)_22%,rgba(0,18,56,0.4)_40%,rgba(0,18,56,0.12)_62%,transparent_80%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#001238_0%,rgba(0,18,56,0.55)_5%,rgba(0,18,56,0.18)_14%,transparent_30%)] lg:bg-[linear-gradient(to_right,#001238_0%,rgba(0,18,56,0.94)_9%,rgba(0,18,56,0.72)_22%,rgba(0,18,56,0.4)_40%,rgba(0,18,56,0.12)_62%,transparent_80%)]" />
 
             {CHIPS.map((chip) => (
               <div
@@ -136,7 +136,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="px-4 pt-14 pb-4 sm:px-6 lg:px-8">
+      <div className="px-5 pt-14 pb-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <span className="text-xs font-medium text-gray-500">
             The frameworks we help you comply with

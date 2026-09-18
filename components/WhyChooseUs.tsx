@@ -42,14 +42,14 @@ const REASONS = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-brand py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-brand py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="font-heading text-4xl font-medium tracking-[-0.03em] text-white sm:text-5xl">
+            <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-white sm:text-4xl">
               Why Choose Athenisec?
             </h2>
-            <p className="mt-5 max-w-xl text-lg text-white/70">
+            <p className="mt-5 max-w-xl text-base text-white/70">
               Trusted by high-growth companies because we simplify
               compliance, save you time, and ensure your security meets the
               highest standards as you scale.

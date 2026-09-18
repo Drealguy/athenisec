@@ -19,7 +19,7 @@ function ArrowRightIcon({ className = "" }: { className?: string }) {
 
 export default function CtaBanner() {
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+    <section className="bg-white px-5 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="relative overflow-hidden rounded-3xl bg-[#000d30] px-6 py-16 text-center sm:px-12 sm:py-20">
           <div className="pointer-events-none absolute inset-0">
@@ -31,7 +31,7 @@ export default function CtaBanner() {
           <h2 className="font-heading relative z-10 mx-auto max-w-2xl text-3xl font-medium tracking-[-0.03em] text-white sm:text-5xl">
             Ready to simplify your compliance?
           </h2>
-          <p className="relative z-10 mx-auto mt-5 max-w-xl text-lg text-white/70">
+          <p className="relative z-10 mx-auto mt-5 max-w-xl text-base text-white/70">
             Let Athenisec handle the heavy lifting so your team can focus on
             building.
           </p>

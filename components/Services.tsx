@@ -121,14 +121,14 @@ export default function Services() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
               Our Core Services
             </h2>
-            <p className="mt-4 text-lg text-gray-500">
+            <p className="mt-4 text-base text-gray-500">
               Effortless compliance solutions for startups, covering SOC2,
               ISO 27001, GDPR, HIPAA, and more.
             </p>
