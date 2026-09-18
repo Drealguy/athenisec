@@ -1,4 +1,4 @@
-import { RevealGroup } from "@/components/Reveal";
+import CardGrid from "@/components/CardGrid";
 import ScrollFillText from "@/components/ScrollFillText";
 
 function RefreshIcon({ className = "" }: { className?: string }) {
@@ -115,31 +115,9 @@ export default function Services() {
           className="font-heading mt-4 max-w-4xl text-3xl leading-[1.15] font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl lg:text-5xl"
         />
 
-        {/* Bordered grid: cards share hairlines instead of sitting in gaps. */}
-        <RevealGroup className="mt-14 grid grid-cols-1 border-t border-l border-gray-200 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => (
-            <div
-              key={service.title}
-              className="group flex min-h-[19rem] flex-col border-r border-b border-gray-200 p-8 transition-colors hover:bg-gray-50"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#001238]">
-                <service.icon className="h-6 w-6 text-white" />
-              </span>
-
-              <div className="mt-auto pt-12">
-                <h3 className="font-heading text-xl font-medium tracking-[-0.03em] text-gray-900">
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-500">
-                  {service.description}
-                </p>
-                <span className="mt-5 inline-flex max-h-0 items-center gap-2 overflow-hidden rounded-full border border-gray-300 px-5 py-0 text-sm font-medium text-gray-900 opacity-0 transition-all duration-300 group-hover:max-h-12 group-hover:py-2.5 group-hover:opacity-100">
-                  Read More
-                </span>
-              </div>
-            </div>
-          ))}
-        </RevealGroup>
+        <div className="mt-14">
+          <CardGrid cards={SERVICES} tone="dark" showReadMore />
+        </div>
       </div>
     </section>
   );
