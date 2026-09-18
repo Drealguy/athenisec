@@ -40,11 +40,13 @@ const REASONS = [
   },
 ];
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function WhyChooseUs() {
   return (
     <section className="bg-brand py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <RevealGroup className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-white sm:text-4xl">
               Why Choose Athenisec?
@@ -86,7 +88,7 @@ export default function WhyChooseUs() {
               );
             })}
           </div>
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

@@ -1,11 +1,15 @@
+import { RevealGroup } from "@/components/Reveal";
+
 export default function AboutIntro() {
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
-        <p className="text-base text-gray-500">
-          Athenisec is a professional cybersecurity compliance practice,
-          helping high-growth companies in regulated industries achieve and
-          maintain compliance without building expensive in-house teams.
+      <RevealGroup className="mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
+        <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
+          About Athenisec
+        </h2>
+        <p className="mt-4 text-base text-gray-500">
+          Athenisec is a professional services practice in complex,
+          multi-party cybersecurity and compliance solutions.
         </p>
 
         <span className="mt-12 inline-flex items-center rounded-full bg-gray-100 px-4 py-1.5 text-xs font-medium tracking-wide text-gray-500 uppercase">
@@ -18,7 +22,7 @@ export default function AboutIntro() {
           compliance so companies can focus on innovation, growth, and
           delivering value.
         </p>
-      </div>
+      </RevealGroup>
     </section>
   );
 }

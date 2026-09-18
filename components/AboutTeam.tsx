@@ -4,11 +4,13 @@ const STATS = [
   { value: "300+", label: "certifications, frameworks, and audits supported" },
 ];
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function AboutTeam() {
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <RevealGroup className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
           <div>
             <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
               Our Expert Team
@@ -37,7 +39,7 @@ export default function AboutTeam() {
               </div>
             ))}
           </div>
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

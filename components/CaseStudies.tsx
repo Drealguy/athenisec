@@ -73,6 +73,8 @@ const CASE_STUDIES = [
   },
 ];
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function CaseStudies() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -83,13 +85,13 @@ export default function CaseStudies() {
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <RevealGroup className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
               Case Studies
             </h2>
             <p className="mt-3 max-w-xl text-base text-gray-500">
-              See how we've helped companies like yours achieve and maintain
+              See how we&apos;ve helped companies like yours achieve and maintain
               compliance.
             </p>
           </div>
@@ -121,7 +123,7 @@ export default function CaseStudies() {
               </button>
             </div>
           </div>
-        </div>
+        </RevealGroup>
 
         <div
           ref={scrollRef}

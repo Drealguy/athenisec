@@ -1,9 +1,11 @@
 const PLACEHOLDER_LOGOS = 6;
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function AboutExpertise() {
   return (
     <section className="bg-gray-50 py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
+      <RevealGroup className="mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
           Our Expertise
         </h2>
@@ -18,7 +20,7 @@ export default function AboutExpertise() {
             <div key={i} className="h-8 w-28 rounded-md bg-gray-200" />
           ))}
         </div>
-      </div>
+      </RevealGroup>
     </section>
   );
 }

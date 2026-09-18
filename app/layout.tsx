@@ -30,6 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <noscript>
+          {/* Without JS the reveal observer never runs, so unhide everything. */}
+          <style>{`[data-reveal],[data-reveal-group]>*{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         <SmoothScroll />
         <Preloader />
         <Header />

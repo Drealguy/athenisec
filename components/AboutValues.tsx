@@ -21,10 +21,12 @@ const VALUES = [
   },
 ];
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function AboutValues() {
   return (
     <section className="bg-white pb-24">
-      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+      <RevealGroup className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
           Our Values
         </h2>
@@ -44,7 +46,7 @@ export default function AboutValues() {
             </div>
           ))}
         </div>
-      </div>
+      </RevealGroup>
     </section>
   );
 }

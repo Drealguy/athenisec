@@ -17,11 +17,13 @@ function ArrowRightIcon({ className = "" }: { className?: string }) {
   );
 }
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function CtaBanner() {
   return (
     <section className="bg-white px-5 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-3xl bg-[#000d30] px-6 py-16 text-center sm:px-12 sm:py-20">
+        <RevealGroup className="relative overflow-hidden rounded-3xl bg-[#000d30] px-6 py-16 text-center sm:px-12 sm:py-20">
           <div className="pointer-events-none absolute inset-0">
             <div className="animate-blob-1 absolute -top-24 -left-16 h-80 w-80 rounded-full bg-[#1e6fff]/50 blur-3xl" />
             <div className="animate-blob-2 absolute top-1/3 -right-20 h-96 w-96 rounded-full bg-[#0046c4]/60 blur-3xl" />
@@ -42,7 +44,7 @@ export default function CtaBanner() {
             Get Started
             <ArrowRightIcon className="h-4 w-4" />
           </Link>
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

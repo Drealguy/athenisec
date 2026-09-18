@@ -65,11 +65,13 @@ const LEGAL_LINKS = [
   { label: "Cookie", href: "/cookie-policy" },
 ];
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function Footer() {
   return (
     <footer className="bg-white px-5 pb-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Image src="/logo.svg" alt="Athenisec" width={150} height={38} />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-500">
@@ -159,7 +161,7 @@ export default function Footer() {
               </button>
             </form>
           </div>
-        </div>
+        </RevealGroup>
 
         <div className="mt-16 flex flex-col items-center gap-4 border-t border-gray-100 pt-8 sm:flex-row sm:justify-between">
           <p className="text-sm text-gray-400">

@@ -117,6 +117,8 @@ const SERVICES = [
   },
 ];
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function Services() {
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -124,7 +126,7 @@ export default function Services() {
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
-          <div className="lg:sticky lg:top-32 lg:self-start">
+          <RevealGroup className="lg:sticky lg:top-32 lg:self-start">
             <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
               Our Core Services
             </h2>
@@ -140,9 +142,9 @@ export default function Services() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </RevealGroup>
 
-          <div className="border-t border-gray-100">
+          <RevealGroup className="border-t border-gray-100">
             {SERVICES.map((service, index) => {
               const isOpen = openIndex === index;
               return (
@@ -178,7 +180,7 @@ export default function Services() {
                 </div>
               );
             })}
-          </div>
+          </RevealGroup>
         </div>
       </div>
     </section>

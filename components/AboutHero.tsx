@@ -15,19 +15,21 @@ function BuildingIcon({ className = "" }: { className?: string }) {
   );
 }
 
+import { RevealGroup } from "@/components/Reveal";
+
 export default function AboutHero() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-gray-800" />
       <div className="absolute inset-0 bg-gradient-to-br from-brand/95 via-brand/90 to-[#000d30]/95" />
 
-      <div className="relative mx-auto max-w-7xl px-5 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 lg:px-8">
+      <RevealGroup className="relative mx-auto max-w-7xl px-5 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 lg:px-8">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-medium tracking-wide text-white uppercase">
           <BuildingIcon className="h-3.5 w-3.5" />
           About Athenisec
         </span>
 
-        <h1 className="font-heading mt-6 max-w-3xl text-5xl font-medium tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl">
+        <h1 className="font-heading mt-6 max-w-3xl text-4xl font-medium tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
           Redefining how SMBs approach compliance
         </h1>
         <p className="mt-6 max-w-2xl text-base text-white/70">
@@ -35,7 +37,7 @@ export default function AboutHero() {
           regulated industries manage governance and meet regulatory
           requirements without building expensive in-house teams.
         </p>
-      </div>
+      </RevealGroup>
     </section>
   );
 }
