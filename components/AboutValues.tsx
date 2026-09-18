@@ -72,7 +72,7 @@ export default function AboutValues() {
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,18rem)_1fr] lg:gap-12">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-12">
           <span className="flex items-start gap-2 text-sm text-gray-500">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-brand" />
             What we hold ourselves to

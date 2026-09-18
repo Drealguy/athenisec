@@ -5,6 +5,16 @@ import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import type { CaseStudy } from "@/lib/case-studies";
 
+/** The tag changes colour as well as label on each cycle, alternating
+ *  through the brand blues so the swap reads as a change rather than a
+ *  flicker. Indexed by tag position, so it wraps with the label. */
+const TAG_TONES = [
+  "bg-brand text-white",
+  "bg-blue-200 text-blue-950",
+  "bg-blue-600 text-white",
+  "bg-sky-300 text-sky-950",
+];
+
 /**
  * Case study card. The framework tag is hidden until hover, then cycles
  * through every framework the engagement covered — so a card advertises
@@ -45,7 +55,9 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
         <ImagePlaceholder label="800 × 600" className="h-full w-full" />
 
         <span
-          className={`absolute top-4 left-4 flex items-center overflow-hidden rounded-full bg-[#001238] px-4 py-2 text-xs font-medium text-white transition-all duration-300 ${
+          className={`absolute top-4 left-4 flex items-center overflow-hidden rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 ${
+            TAG_TONES[tagIndex % TAG_TONES.length]
+          } ${
             hovered
               ? "translate-y-0 opacity-100"
               : "-translate-y-2 opacity-0"
