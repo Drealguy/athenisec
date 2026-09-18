@@ -15,9 +15,13 @@ import { useEffect, useRef } from "react";
 export default function ScrollFillText({
   text,
   className = "",
+  as: Tag = "h2",
 }: {
+  /** Use "\n" to force a manual line break; the fill still runs across
+   *  every line as one continuous sweep. */
   text: string;
   className?: string;
+  as?: "h1" | "h2";
 }) {
   const ref = useRef<HTMLHeadingElement>(null);
 
@@ -48,7 +52,10 @@ export default function ScrollFillText({
         Math.max(0, (start - rect.top) / (start - end)),
       );
 
-      const filled = progress * chars.length;
+      // Overshoot the target by the easing window itself, otherwise the
+      // trailing characters asymptotically approach full opacity but never
+      // actually reach it even once progress caps at 1.
+      const filled = progress * (chars.length + 6);
       chars.forEach((char, index) => {
         // Each character eases in over roughly a six-character window, so
         // the leading edge is a soft gradient rather than a hard cut.
@@ -79,27 +86,32 @@ export default function ScrollFillText({
 
   // Words stay inline-block so a line break never lands mid-word; the
   // spaces between them sit outside, keeping normal wrapping.
-  const words = text.split(" ");
+  const lines = text.split("\n");
 
   return (
-    <h2 ref={ref} className={className}>
-      {words.map((word, wordIndex) => (
-        <span key={wordIndex}>
-          <span className="inline-block">
-            {Array.from(word).map((char, charIndex) => (
-              <span
-                key={charIndex}
-                data-fill-char
-                style={{ opacity: 0.18 }}
-                className="transition-opacity duration-100"
-              >
-                {char}
+    <Tag ref={ref} className={className}>
+      {lines.map((line, lineIndex) => (
+        <span key={lineIndex}>
+          {line.split(" ").map((word, wordIndex, words) => (
+            <span key={wordIndex}>
+              <span className="inline-block">
+                {Array.from(word).map((char, charIndex) => (
+                  <span
+                    key={charIndex}
+                    data-fill-char
+                    style={{ opacity: 0.18 }}
+                    className="transition-opacity duration-100"
+                  >
+                    {char}
+                  </span>
+                ))}
               </span>
-            ))}
-          </span>
-          {wordIndex < words.length - 1 ? " " : ""}
+              {wordIndex < words.length - 1 ? " " : ""}
+            </span>
+          ))}
+          {lineIndex < lines.length - 1 ? <br /> : null}
         </span>
       ))}
-    </h2>
+    </Tag>
   );
 }

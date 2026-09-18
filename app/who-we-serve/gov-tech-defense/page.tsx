@@ -8,11 +8,11 @@ import CaseStudies from "@/components/CaseStudies";
  * duplicate this file into a sibling route and swap this one object.
  */
 const CONTENT = {
-  title: "Compliance Solutions for Health Tech Companies",
+  title: "Compliance Solutions for Gov Tech & Defense Companies",
   intro:
-    "As your Health Tech business scales, maintaining compliance with global standards like HIPAA, ISO 27001, SOC2, and HiTrust is critical. We provide tailored compliance to ensure you stay secure, scalable, and fully compliant.",
+    "As your Gov Tech or Defense business scales, maintaining compliance with global standards like ISO 27001, SOC2, and GDPR is critical. We provide tailored compliance to ensure you stay secure, scalable, and fully compliant.",
   challengesIntro:
-    "Healthtech companies face several compliance hurdles, including the need to protect sensitive customer data, adhere to data privacy regulations, and ensure scalability while maintaining the security requirements of clients and partners. Some of the most common challenges include:",
+    "Companies selling to the government face several compliance hurdles, including the need to protect sensitive customer data, adhere to data privacy regulations, and ensure scalability while maintaining the security requirements of clients and partners. Some of the most common challenges include:",
   challenges: [
     {
       title: "Limited Bandwidth",
@@ -51,7 +51,7 @@ const CONTENT = {
   ],
 };
 
-export default function HealthTechPage() {
+export default function GovTechDefensePage() {
   return (
     <main className="flex-1">
       <PageHero

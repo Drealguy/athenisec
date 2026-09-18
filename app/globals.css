@@ -20,19 +20,6 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-@keyframes preloader-glare {
-  0% {
-    background-position: -150% 0;
-  }
-  100% {
-    background-position: 150% 0;
-  }
-}
-
-.preloader-glare {
-  animation: preloader-glare 1400ms ease-in-out 1;
-}
-
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -226,4 +213,44 @@ body {
 
 .animate-tag-swap {
   animation: tag-swap 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Contact form: each question rises into place as the step changes. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hero click ripple: a difference-blend circle grows from the click point
+   and fades, inverting whatever colour it passes over. */
+@keyframes invert-ripple {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.9;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(30);
+    opacity: 0;
+  }
+}
+
+.animate-invert-ripple {
+  animation: invert-ripple 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-invert-ripple {
+    animation: none;
+    display: none;
+  }
 }

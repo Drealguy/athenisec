@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import HoverSwapText from "@/components/HoverSwapText";
+import CookieSettings from "@/components/CookieSettings";
 
 function ArrowRightIcon({ className = "" }: { className?: string }) {
   return (
@@ -61,7 +63,6 @@ const FRAMEWORK_LINKS = [
 const LEGAL_LINKS = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-of-service" },
-  { label: "Security", href: "/security" },
   { label: "Cookie", href: "/cookie-policy" },
 ];
 
@@ -74,7 +75,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl rounded-3xl bg-white p-7 sm:p-10 lg:p-12">
         <RevealGroup className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Image src="/logo.svg" alt="Athenisec" width={150} height={38} />
+            <Image src="/logo.svg" alt="Athenisec" width={150} height={36} />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-500">
               Cybersecurity compliance solutions for SMBs in regulated
               industries.
@@ -155,9 +156,9 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="flex shrink-0 items-center gap-1 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
+                className="group flex shrink-0 items-center gap-1 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
               >
-                Subscribe
+                <HoverSwapText>Subscribe</HoverSwapText>
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
             </form>
@@ -178,6 +179,7 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+            <CookieSettings className="text-sm text-gray-400 transition-colors hover:text-brand" />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HoverSwapText from "@/components/HoverSwapText";
 
 function ArrowUpRightIcon({ className = "" }: { className?: string }) {
   return (
@@ -27,7 +28,7 @@ export default function PageHero({
   image: { src: string; alt: string };
 }) {
   return (
-    <section className="relative isolate flex min-h-[52vh] w-full items-center justify-center overflow-hidden bg-[#001238] pt-20">
+    <section className="relative isolate flex min-h-[60vh] w-full items-center justify-center overflow-hidden bg-[#001238] pt-32 sm:pt-40">
       <Image
         src={image.src}
         alt={image.alt}
@@ -38,7 +39,7 @@ export default function PageHero({
       />
       <div className="absolute inset-0 -z-10 bg-[#001238]/65" />
 
-      <div className="mx-auto max-w-4xl px-5 pb-10 text-center sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-5 pb-16 text-center sm:px-6 sm:pb-20 lg:px-8">
         <h1 className="font-heading text-4xl font-medium tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl">
           {title}
         </h1>
@@ -52,9 +53,9 @@ export default function PageHero({
         {cta ? (
           <Link
             href={cta.href}
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-100"
+            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-100"
           >
-            {cta.label}
+            <HoverSwapText>{cta.label}</HoverSwapText>
             <ArrowUpRightIcon className="h-4 w-4" />
           </Link>
         ) : null}

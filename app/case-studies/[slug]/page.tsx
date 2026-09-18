@@ -47,9 +47,9 @@ function DetailSection({
   return (
     <section className={`py-16 sm:py-20 lg:py-24 ${className}`}>
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-12">
-          <span className="flex items-start gap-2 text-sm text-gray-500">
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-brand" />
+        <div className="flex flex-col gap-3">
+          <span className="flex items-center gap-2 text-sm text-gray-500">
+            <span className="h-1.5 w-1.5 shrink-0 bg-brand" />
             {eyebrow}
           </span>
           <ScrollFillText

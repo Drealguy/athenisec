@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import HoverSwapText from "@/components/HoverSwapText";
 import type { CaseStudy } from "@/lib/case-studies";
 
 /** The tag changes colour as well as label on each cycle, alternating
@@ -79,9 +80,9 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
 
         <Link
           href={`/case-studies/${study.slug}`}
-          className="mt-6 inline-flex w-fit items-center rounded-full border border-gray-300 px-6 py-3 text-sm font-medium text-gray-900 transition-colors hover:border-brand hover:bg-white"
+          className="group mt-6 inline-flex w-fit items-center rounded-full border border-gray-300 px-6 py-3 text-sm font-medium text-gray-900 transition-colors hover:border-brand hover:bg-white"
         >
-          Read More
+          <HoverSwapText>Read More</HoverSwapText>
         </Link>
       </div>
     </article>

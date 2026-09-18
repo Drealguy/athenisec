@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HoverSwapText from "@/components/HoverSwapText";
 
 function ArrowRightIcon({ className = "" }: { className?: string }) {
   return (
@@ -39,9 +40,9 @@ export default function CtaBanner() {
           </p>
           <Link
             href="/contact"
-            className="relative z-10 mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-medium text-brand transition-colors hover:bg-white/90"
+            className="group relative z-10 mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-medium text-brand transition-colors hover:bg-white/90"
           >
-            Get Started
+            <HoverSwapText>Get Started</HoverSwapText>
             <ArrowRightIcon className="h-4 w-4" />
           </Link>
         </RevealGroup>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ScrollFillText from "@/components/ScrollFillText";
+import HoverSwapText from "@/components/HoverSwapText";
 import { CASE_STUDIES } from "@/lib/case-studies";
 
 
@@ -26,9 +27,9 @@ export default function CaseStudies() {
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-12">
-          <span className="flex items-start gap-2 text-sm text-gray-500">
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-brand" />
+        <div className="flex flex-col gap-3">
+          <span className="flex items-center gap-2 text-sm text-gray-500">
+            <span className="h-1.5 w-1.5 shrink-0 bg-brand" />
             Proven outcomes, audited and maintained
           </span>
           <ScrollFillText
@@ -85,9 +86,9 @@ export default function CaseStudies() {
         <div className="mt-12">
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
+            className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
           >
-            View All Case Studies
+            <HoverSwapText>View All Case Studies</HoverSwapText>
             <ArrowUpRightIcon className="h-4 w-4" />
           </Link>
         </div>

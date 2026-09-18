@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ScrollFillText from "@/components/ScrollFillText";
+import HoverSwapText from "@/components/HoverSwapText";
 
 function LinkedInIcon({ className = "" }: { className?: string }) {
   return (
@@ -144,9 +145,9 @@ export default function AboutTeam() {
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
+                className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
               >
-                Connect With Our Team
+                <HoverSwapText>Connect With Our Team</HoverSwapText>
                 <ArrowUpRightIcon className="h-4 w-4" />
               </Link>
             </div>

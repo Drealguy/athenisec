@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CardGrid, { type GridCard } from "@/components/CardGrid";
 import ScrollFillText from "@/components/ScrollFillText";
+import HoverSwapText from "@/components/HoverSwapText";
 
 function GemIcon({ className = "" }: { className?: string }) {
   return (
@@ -95,15 +96,15 @@ export default function AboutValues() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
             >
-              Book a Consultation
+              <HoverSwapText>Book a Consultation</HoverSwapText>
             </Link>
             <Link
               href="/case-studies"
-              className="inline-flex items-center rounded-full border border-gray-300 px-7 py-4 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-50"
+              className="group inline-flex items-center rounded-full border border-gray-300 px-7 py-4 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-50"
             >
-              Case Studies
+              <HoverSwapText>Case Studies</HoverSwapText>
             </Link>
           </div>
         </div>
