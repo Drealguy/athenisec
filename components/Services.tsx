@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import NextImage from "next/image";
+import { RevealGroup } from "@/components/Reveal";
 
 function RefreshIcon({ className = "" }: { className?: string }) {
   return (
@@ -74,21 +71,6 @@ function ClipboardListIcon({ className = "" }: { className?: string }) {
   );
 }
 
-function ChevronDownIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="m6 9 6 6 6-6" />
-    </svg>
-  );
-}
 
 const SERVICES = [
   {
@@ -117,71 +99,46 @@ const SERVICES = [
   },
 ];
 
-import { RevealGroup } from "@/components/Reveal";
 
 export default function Services() {
-  const [openIndex, setOpenIndex] = useState(0);
-
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
-          <RevealGroup className="lg:sticky lg:top-32 lg:self-start">
-            <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
-              Our Core Services
-            </h2>
-            <p className="mt-4 text-base text-gray-500">
-              Effortless compliance solutions for startups, covering SOC2,
-              ISO 27001, GDPR, HIPAA, and more.
-            </p>
-            <div className="relative mt-8 aspect-[4/5] w-full overflow-hidden rounded-3xl">
-              <NextImage
-                src="/images/why-choose-us-team.jpg"
-                alt="Athenisec team collaborating"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </RevealGroup>
+        <span className="flex items-center gap-2 text-sm text-gray-500">
+          <span className="h-1.5 w-1.5 bg-brand" />
+          Confidence, resilience, and strategic precision
+        </span>
 
-          <RevealGroup className="border-t border-gray-100">
-            {SERVICES.map((service, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div key={service.title} className="border-b border-gray-100">
-                  <button
-                    type="button"
-                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                    className="flex w-full items-center gap-4 py-6 text-left"
-                    aria-expanded={isOpen}
-                  >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-gray-50">
-                      <service.icon className="h-5 w-5 text-brand" />
-                    </span>
-                    <span className="font-heading flex-1 text-lg font-medium tracking-[-0.03em] text-gray-900">
-                      {service.title}
-                    </span>
-                    <ChevronDownIcon
-                      className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <div
-                    className="grid overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out"
-                    style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
-                  >
-                    <div className="min-h-0">
-                      <p className="pb-6 pl-[3.75rem] text-sm leading-relaxed text-gray-500">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </RevealGroup>
-        </div>
+        <h2 className="font-heading mt-4 max-w-4xl text-3xl leading-[1.15] font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl lg:text-5xl">
+          Discover compliance solutions shaped by trust, precision, and
+          long-term strategic <span className="text-gray-300">value.</span>
+        </h2>
+
+        {/* Bordered grid: cards share hairlines instead of sitting in gaps. */}
+        <RevealGroup className="mt-14 grid grid-cols-1 border-t border-l border-gray-200 sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((service) => (
+            <div
+              key={service.title}
+              className="group flex min-h-[19rem] flex-col border-r border-b border-gray-200 p-8 transition-colors hover:bg-gray-50"
+            >
+              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#001238]">
+                <service.icon className="h-6 w-6 text-white" />
+              </span>
+
+              <div className="mt-auto pt-12">
+                <h3 className="font-heading text-xl font-medium tracking-[-0.03em] text-gray-900">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                  {service.description}
+                </p>
+                <span className="mt-5 inline-flex max-h-0 items-center gap-2 overflow-hidden rounded-full border border-gray-300 px-5 py-0 text-sm font-medium text-gray-900 opacity-0 transition-all duration-300 group-hover:max-h-12 group-hover:py-2.5 group-hover:opacity-100">
+                  Read More
+                </span>
+              </div>
+            </div>
+          ))}
+        </RevealGroup>
       </div>
     </section>
   );
