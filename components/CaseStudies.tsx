@@ -1,24 +1,8 @@
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ScrollFillText from "@/components/ScrollFillText";
+import { CASE_STUDIES } from "@/lib/case-studies";
 
-const CASE_STUDIES = [
-  {
-    tags: ["SOC 2", "HIPAA", "GDPR"],
-    brand: "Client Name",
-    description: "Short summary of the compliance engagement and outcome.",
-  },
-  {
-    tags: ["HIPAA", "ISO 27001"],
-    brand: "Client Name",
-    description: "Short summary of the compliance engagement and outcome.",
-  },
-  {
-    tags: ["ISO 27001", "SOC 2", "PCI DSS", "GDPR"],
-    brand: "Client Name",
-    description: "Short summary of the compliance engagement and outcome.",
-  },
-];
 
 function CheckIcon({ className = "" }: { className?: string }) {
   return (
@@ -56,7 +40,7 @@ export default function CaseStudies() {
         {/* Each row sticks, so the next one scrolls up and overlaps it. The
             solid background is what makes the overlap read cleanly. */}
         <div className="mt-16">
-          {CASE_STUDIES.map((study, index) => (
+          {CASE_STUDIES.slice(0, 3).map((study, index) => (
             <div
               key={index}
               className="sticky top-24 border-t border-gray-200 bg-white pt-10 pb-14"
@@ -68,7 +52,7 @@ export default function CaseStudies() {
 
                 <div>
                   <h3 className="font-heading text-xl font-medium tracking-[-0.03em] text-gray-900">
-                    {study.brand}
+                    {study.title}
                   </h3>
                   <p className="mt-3 max-w-lg text-sm leading-relaxed text-gray-500">
                     {study.description}

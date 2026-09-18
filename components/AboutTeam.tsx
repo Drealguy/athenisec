@@ -146,14 +146,8 @@ export default function AboutTeam() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#001d61]"
               >
-                Meet Our Team
+                Connect With Our Team
                 <ArrowUpRightIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-full border border-gray-300 px-7 py-4 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-50"
-              >
-                Job Opportunities
               </Link>
             </div>
           </div>
