@@ -1,30 +1,53 @@
-"use client";
+import CardGrid, { type GridCard } from "@/components/CardGrid";
+import ScrollFillText from "@/components/ScrollFillText";
 
-import { useState } from "react";
-import { RevealGroup } from "@/components/Reveal";
-
-function ChevronDownIcon({ className = "" }: { className?: string }) {
+function ClockIcon({ className = "" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="m6 9 6 6 6-6" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}
+      strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
     </svg>
   );
 }
 
+function CompassIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}
+      strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m15.5 8.5-2 5-5 2 2-5Z" />
+    </svg>
+  );
+}
+
+function AlertIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}
+      strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M10.3 4.3 2.8 17a2 2 0 0 0 1.7 3h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0Z" />
+      <path d="M12 9v4M12 17h.01" />
+    </svg>
+  );
+}
+
+function LayersIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}
+      strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="m12 3 9 5-9 5-9-5Z" />
+      <path d="m3 13 9 5 9-5" />
+    </svg>
+  );
+}
+
+const ICONS = [ClockIcon, CompassIcon, AlertIcon, LayersIcon];
+
 export type Challenge = { title: string; description: string };
 
 /**
- * Same sticky-column + accordion layout as the homepage's Core Services,
- * minus the image box. Shared by every Who We Serve page — only the
- * content prop changes.
+ * Key compliance challenges as box cards. Shared by every Who We Serve
+ * page — only the content prop changes.
  */
 export default function ComplianceChallenges({
   intro,
@@ -33,53 +56,31 @@ export default function ComplianceChallenges({
   intro: string;
   challenges: Challenge[];
 }) {
-  const [openIndex, setOpenIndex] = useState(0);
+  const cards: GridCard[] = challenges.map((challenge, index) => ({
+    ...challenge,
+    icon: ICONS[index % ICONS.length],
+  }));
 
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
-          <RevealGroup className="lg:sticky lg:top-32 lg:self-start">
-            <h2 className="font-heading text-3xl font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl">
-              Key Compliance Challenges
-            </h2>
-            <p className="mt-4 text-base text-gray-500">{intro}</p>
-          </RevealGroup>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-12">
+          <span className="flex items-start gap-2 text-sm text-gray-500">
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-brand" />
+            What stands in the way
+          </span>
+          <ScrollFillText
+            text="Key compliance challenges"
+            className="font-heading text-3xl leading-[1.15] font-medium tracking-[-0.03em] text-gray-900 sm:text-4xl lg:text-5xl"
+          />
+        </div>
 
-          <RevealGroup className="border-t border-gray-100">
-            {challenges.map((challenge, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div key={challenge.title} className="border-b border-gray-100">
-                  <button
-                    type="button"
-                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                    className="flex w-full items-center gap-4 py-6 text-left"
-                    aria-expanded={isOpen}
-                  >
-                    <span className="font-heading flex-1 text-lg font-medium tracking-[-0.03em] text-gray-900">
-                      {challenge.title}
-                    </span>
-                    <ChevronDownIcon
-                      className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <div
-                    className="grid overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out"
-                    style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
-                  >
-                    <div className="min-h-0">
-                      <p className="pb-6 text-sm leading-relaxed text-gray-500">
-                        {challenge.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </RevealGroup>
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-gray-500">
+          {intro}
+        </p>
+
+        <div className="mt-12">
+          <CardGrid cards={cards} tone="dark" />
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import WhoWeServeHero from "@/components/WhoWeServeHero";
+import PageHero from "@/components/PageHero";
 import ComplianceChallenges from "@/components/ComplianceChallenges";
 import HowWeDiffer from "@/components/HowWeDiffer";
 import CaseStudies from "@/components/CaseStudies";
@@ -8,10 +8,7 @@ import CaseStudies from "@/components/CaseStudies";
  * duplicate this file into a sibling route and swap this one object.
  */
 const CONTENT = {
-  headline: ["Compliance Solutions", "for B2B SaaS Companies"] as [
-    string,
-    string,
-  ],
+  title: "Compliance Solutions for B2B SaaS Companies",
   intro:
     "As your B2B SaaS business scales, maintaining compliance with global standards like ISO 27001, SOC2, and GDPR is critical. We provide tailored compliance to ensure you stay secure, scalable, and fully compliant.",
   challengesIntro:
@@ -57,7 +54,15 @@ const CONTENT = {
 export default function HealthTechPage() {
   return (
     <main className="flex-1">
-      <WhoWeServeHero headline={CONTENT.headline} intro={CONTENT.intro} />
+      <PageHero
+        title={CONTENT.title}
+        intro={CONTENT.intro}
+        cta={{ label: "Learn More", href: "/contact" }}
+        image={{
+          src: "/images/hero-team.jpg",
+          alt: `${CONTENT.title} compliance team`,
+        }}
+      />
       <ComplianceChallenges
         intro={CONTENT.challengesIntro}
         challenges={CONTENT.challenges}
