@@ -42,18 +42,6 @@ export default function WhoWeServeHero({
 
         <p className="mt-6 max-w-2xl text-base text-white/70">{intro}</p>
 
-        {/* Client logos — placeholders until brand assets land. */}
-        <div className="mt-12 grid max-w-2xl grid-cols-2 gap-4 sm:grid-cols-4">
-          {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="flex h-16 items-center justify-center rounded-2xl border border-dashed border-white/20 bg-white/5 text-[11px] text-white/40"
-            >
-              Logo
-            </div>
-          ))}
-        </div>
-
         <div className="mt-10">
           <Link
             href="/contact"

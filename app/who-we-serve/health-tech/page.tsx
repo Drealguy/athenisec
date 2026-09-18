@@ -33,6 +33,8 @@ const CONTENT = {
         "Mistakes and bottlenecks in meeting requirements can jeopardize timelines and risk costly setbacks.",
     },
   ],
+  differentiatorsIntro:
+    "We handle the work rather than hand you a checklist, and we do it without tying you to any one vendor.",
   differentiators: [
     {
       title: "Platform Agnostic",
@@ -60,7 +62,10 @@ export default function HealthTechPage() {
         intro={CONTENT.challengesIntro}
         challenges={CONTENT.challenges}
       />
-      <HowWeDiffer items={CONTENT.differentiators} />
+      <HowWeDiffer
+        intro={CONTENT.differentiatorsIntro}
+        items={CONTENT.differentiators}
+      />
       <CaseStudies />
     </main>
   );

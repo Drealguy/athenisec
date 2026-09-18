@@ -69,8 +69,9 @@ import { RevealGroup } from "@/components/Reveal";
 
 export default function Footer() {
   return (
-    <footer className="bg-white px-5 pb-10 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <footer className="bg-brand px-4 pt-12 pb-6 sm:px-6 sm:pt-16 sm:pb-8 lg:px-8">
+      {/* Content sits on an inset white card against the brand ground. */}
+      <div className="mx-auto max-w-6xl rounded-3xl bg-white p-7 sm:p-10 lg:p-12">
         <RevealGroup className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Image src="/logo.svg" alt="Athenisec" width={150} height={38} />
@@ -163,7 +164,7 @@ export default function Footer() {
           </div>
         </RevealGroup>
 
-        <div className="mt-16 flex flex-col items-center gap-4 border-t border-gray-100 pt-8 sm:flex-row sm:justify-between">
+        <div className="mt-12 flex flex-col items-center gap-4 border-t border-gray-100 pt-8 sm:flex-row sm:justify-between">
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Athenisec LLC. All rights reserved.
           </p>
