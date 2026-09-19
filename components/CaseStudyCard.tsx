@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import HoverSwapText from "@/components/HoverSwapText";
@@ -53,7 +54,17 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
       className="group flex flex-col overflow-hidden rounded-2xl bg-blue-50/60 transition-colors hover:bg-blue-50"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden">
-        <ImagePlaceholder label="800 × 600" className="h-full w-full" />
+        {study.image ? (
+          <Image
+            src={study.image.src}
+            alt={study.image.alt}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <ImagePlaceholder label="800 × 600" className="h-full w-full" />
+        )}
 
         <span
           className={`absolute top-4 left-4 flex items-center overflow-hidden rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 ${
@@ -72,7 +83,7 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
 
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         <h3 className="font-heading text-xl leading-snug font-medium tracking-[-0.03em] text-gray-900">
-          {study.title}
+          {study.brand}
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-gray-500">
           {study.description}

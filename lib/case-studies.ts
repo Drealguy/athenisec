@@ -3,7 +3,10 @@ export type CaseStudy = {
   /** Client name shown on the detail page. Placeholder until real
    *  engagements are cleared for publication. */
   brand: string;
+  /** Headline for the "About the client" section on the detail page. */
   title: string;
+  /** Short "what they are" blurb — shown on the card, under the brand
+   *  name, and used as the page's meta description. */
   description: string;
   /** Frameworks delivered — the hover tag on cards, and the chips on the
    *  detail page. */
@@ -11,129 +14,163 @@ export type CaseStudy = {
   about: string;
   challenges: string[];
   approach: string[];
+  /** Card thumbnail. Falls back to the placeholder graphic when omitted. */
+  image?: { src: string; alt: string };
 };
 
 /** Shared by the homepage section, the Case Studies index and each detail
  *  page, so the three can't drift apart. */
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    slug: "scalable-growth",
-    brand: "Client Name",
-    title: "Building a stronger compliance posture for scalable growth",
+    slug: "medisync-health",
+    brand: "MediSync Health",
+    title: "Reaching HIPAA certification in 45 days ahead of a hard audit deadline",
     description:
-      "How a growing company improved planning, documentation, and audit readiness to support smarter expansion.",
-    tags: ["SOC 2", "HIPAA", "GDPR"],
+      "Telemedicine SaaS platform connecting rural clinics with specialist doctors. 45-person team, $2.3M ARR.",
+    tags: ["HIPAA"],
     about:
-      "A fast-growing platform in a regulated industry, scaling its customer base faster than its internal security function could keep pace with.",
+      "Telemedicine SaaS platform connecting rural clinics with specialist doctors. 45-person team, $2.3M ARR.",
     challenges: [
-      "Limited internal bandwidth to own day-to-day compliance work.",
-      "No single view of which controls mapped to which framework.",
-      "Enterprise deals stalling on security review.",
+      "Handling patient PHI across the platform with no formal compliance program in place.",
+      "A HIPAA audit scheduled in 60 days, with zero preparation completed.",
+      "Multiple integrations with health systems creating scope confusion.",
+      "Limited internal cybersecurity resources to run the program alone.",
     ],
     approach: [
-      "Mapped existing controls against every framework in scope to remove duplicated effort.",
-      "Took ownership of evidence collection, documentation and auditor communication.",
-      "Established a monitoring cadence so compliance holds between audit cycles.",
+      "Conducted a rapid HIPAA gap assessment and scoped every PHI data flow across the platform.",
+      "Implemented access controls, encryption at rest and in transit, and BAA documentation.",
+      "Built an audit-ready evidence repository and trained staff on HIPAA policy.",
+      "Achieved HIPAA certification in 45 days, unlocking an enterprise deal worth $500K in ARR.",
+    ],
+    image: {
+      src: "/images/case-studies/medisync-health.png",
+      alt: "MediSync Health telemedicine platform showing HIPAA audit readiness progress",
+    },
+  },
+  {
+    slug: "payflow-analytics",
+    brand: "PayFlow Analytics",
+    title: "Achieving PCI DSS v4.0.1 certification in 90 days",
+    description:
+      "Fintech SaaS processing payment data for e-commerce merchants. 30-person team, $1.8M ARR.",
+    tags: ["PCI DSS"],
+    about:
+      "Fintech SaaS processing payment data for e-commerce merchants. 30-person team, $1.8M ARR.",
+    challenges: [
+      "Processing credit card data without PCI DSS compliance.",
+      "Using a third-party payment processor but still liable for integration security.",
+      "Misconfigured AWS S3 buckets exposing cardholder data.",
+      "Vendor dependency management chaos.",
+    ],
+    approach: [
+      "Reduced PCI scope through tokenization and proper segmentation.",
+      "Remediated S3 bucket configurations and implemented encryption.",
+      "Mapped vendor dependencies and enforced SLAs.",
+      "Achieved PCI DSS v4.0.1 certification in 90 days.",
+    ],
+    image: {
+      src: "/images/case-studies/payflow-analytics.png",
+      alt: "PayFlow Analytics dashboard showing PCI DSS compliance and payment monitoring",
+    },
+  },
+  {
+    slug: "cloudstack-enterprise",
+    brand: "CloudStack Enterprise",
+    title:
+      "Achieving SOC 2, ISO 27001 and GDPR certification in 6 months for EU expansion",
+    description:
+      "B2B SaaS infrastructure platform selling to enterprises. 60-person team, $4.2M ARR.",
+    tags: ["SOC 2", "ISO 27001", "GDPR"],
+    about:
+      "B2B SaaS infrastructure platform selling to enterprises. 60-person team, $4.2M ARR.",
+    challenges: [
+      "Already SOC 2 compliant but needed ISO 27001 and GDPR for EU market expansion.",
+      "One founder managing all compliance while the company scaled.",
+      "Engineering team diverted to compliance work instead of product.",
+      "Multi-framework requirements felt overwhelming.",
+    ],
+    approach: [
+      "Ran SOC 2 and ISO 27001 as an integrated program with 95% control overlap.",
+      "Deployed a dedicated compliance team to handle audit work.",
+      "Freed engineering to focus on product while maintaining compliance velocity.",
+      "Achieved all three certifications (SOC 2 Type II, ISO 27001, GDPR) in 6 months, returning $120K in annual engineering time to product development.",
+    ],
+    image: {
+      src: "/images/case-studies/cloudstack-enterprise.png",
+      alt: "CloudStack Enterprise dashboard showing SOC 2, ISO 27001, and GDPR compliance progress",
+    },
+  },
+  {
+    slug: "healthvault-labs",
+    brand: "HealthVault Labs",
+    title: "Reaching dual HIPAA and GDPR readiness in 120 days",
+    description:
+      "Healthcare data analytics startup processing genetic testing results. 25-person team, $900K ARR.",
+    tags: ["HIPAA", "GDPR"],
+    about:
+      "Healthcare data analytics startup processing genetic testing results. 25-person team, $900K ARR.",
+    challenges: [
+      "Handling sensitive PHI and genomic data under both HIPAA and GDPR requirements.",
+      "No formal incident response plan or breach notification procedure.",
+      "A third-party vendor managing ePHI without a clear responsibility matrix.",
+      "A compliance knowledge gap across the entire organization.",
+    ],
+    approach: [
+      "Built a comprehensive HIPAA + GDPR compliance program from scratch.",
+      "Implemented an incident response plan with a 72-hour breach notification SLA.",
+      "Established a vendor management framework and enforced BAAs across 12 vendors.",
+      "Conducted staff training on data protection protocols.",
+      "Achieved dual HIPAA/GDPR readiness in 120 days, unlocking enterprise contracts.",
+    ],
+    image: {
+      src: "/images/case-studies/healthvault-labs.png",
+      alt: "HealthVault Labs dashboard showing HIPAA and GDPR compliance status",
+    },
+  },
+  {
+    slug: "securefinance-corp",
+    brand: "SecureFinance Corp",
+    title: "Passing PCI DSS and SOC 2 audits on schedule with zero findings",
+    description:
+      "Lending platform providing SMB loans. 40-person team, $3.1M ARR.",
+    tags: ["PCI DSS", "SOC 2"],
+    about: "Lending platform providing SMB loans. 40-person team, $3.1M ARR.",
+    challenges: [
+      "PCI DSS and SOC 2 requirements driven by credit card processors and enterprise clients.",
+      "Legacy infrastructure running outdated security controls.",
+      "Limited prior audit preparation experience.",
+      "Competing timelines: a PCI audit in 6 months and a SOC 2 audit in 8 months.",
+    ],
+    approach: [
+      "Conducted a comprehensive security posture assessment.",
+      "Modernized infrastructure with proper segmentation and encryption.",
+      "Built a unified evidence repository serving both PCI and SOC 2 requirements.",
+      "Implemented continuous monitoring for ongoing compliance.",
+      "Passed both audits on schedule with zero findings.",
     ],
   },
   {
-    slug: "audit-readiness",
-    brand: "Client Name",
-    title: "Achieving audit readiness without an in-house security team",
+    slug: "govtech-solutions",
+    brand: "GovTech Solutions",
+    title:
+      "Achieving CMMC 2 Level 2 certification in 120 days to close a $1.2M contract",
     description:
-      "A managed engagement that helped the business close control gaps and pass its first external audit.",
-    tags: ["HIPAA", "ISO 27001"],
+      "Government contracting platform handling federal procurement data. 35-person team, $2.6M ARR.",
+    tags: ["CMMC 2"],
     about:
-      "An operator preparing for its first external audit with no dedicated security hire and a tight commercial deadline.",
+      "Government contracting platform handling federal procurement data. 35-person team, $2.6M ARR.",
     challenges: [
-      "First-time audit with no prior framework experience in house.",
-      "Technical gaps across access control and logging.",
-      "A fixed deadline driven by a customer commitment.",
+      "Required CMMC 2 Level 2 certification to bid on defense contracts.",
+      "No prior security operations center or formalized incident response.",
+      "Unclear requirements for handling Controlled Unclassified Information (CUI).",
+      "An aggressive timeline: certification needed in 4 months to close a $1.2M contract.",
     ],
     approach: [
-      "Ran a gap assessment and prioritised findings by audit impact.",
-      "Implemented the technical remediation directly rather than handing over a list.",
-      "Prepared the team and the evidence pack ahead of fieldwork.",
-    ],
-  },
-  {
-    slug: "fractional-ciso",
-    brand: "Client Name",
-    title: "Delivering executive security guidance without a full-time CISO",
-    description:
-      "How outsourced compliance support brought clarity, structure, and stronger decision making.",
-    tags: ["ISO 27001", "SOC 2", "PCI DSS", "GDPR"],
-    about:
-      "A scaling business needing senior security judgement in the room without carrying a full-time executive hire.",
-    challenges: [
-      "Security decisions escalating with no clear owner.",
-      "Multiple overlapping frameworks pulling in different directions.",
-      "Board and customer reporting with no consistent format.",
-    ],
-    approach: [
-      "Provided senior guidance on risk decisions as they arose.",
-      "Consolidated overlapping requirements into a single control set.",
-      "Built reporting that satisfies both board oversight and customer due diligence.",
-    ],
-  },
-  {
-    slug: "unified-controls",
-    brand: "Client Name",
-    title: "Consolidating multiple frameworks into one control set",
-    description:
-      "Mapping overlapping requirements so a single set of evidence satisfies several audits at once.",
-    tags: ["SOC 2", "ISO 27001"],
-    about:
-      "An organisation carrying several certifications, each maintained separately and duplicating work across teams.",
-    challenges: [
-      "The same evidence collected repeatedly for different audits.",
-      "Framework owners working in isolation from one another.",
-      "Rising audit cost with each certification added.",
-    ],
-    approach: [
-      "Built a unified control set mapped to every framework in scope.",
-      "Reduced evidence collection to a single cycle per control.",
-      "Aligned audit scheduling to remove repeated fieldwork.",
-    ],
-  },
-  {
-    slug: "continuous-monitoring",
-    brand: "Client Name",
-    title: "Standing up continuous monitoring across cloud infrastructure",
-    description:
-      "Configuring logging, alerting, and evidence collection so compliance holds between audit cycles.",
-    tags: ["SOC 2", "PCI DSS"],
-    about:
-      "A cloud-native business whose compliance posture degraded between annual audits as infrastructure changed.",
-    challenges: [
-      "Controls drifting as infrastructure changed week to week.",
-      "Evidence reconstructed retrospectively before each audit.",
-      "No alerting when a control silently stopped working.",
-    ],
-    approach: [
-      "Configured logging and alerting across the cloud estate.",
-      "Automated evidence collection so it accrues continuously.",
-      "Set review cadences that catch drift within days, not months.",
-    ],
-  },
-  {
-    slug: "enterprise-procurement",
-    brand: "Client Name",
-    title: "Preparing a health tech platform for enterprise procurement",
-    description:
-      "Meeting the security requirements that unblock larger customers and shorten review cycles.",
-    tags: ["HIPAA", "SOC 2", "GDPR"],
-    about:
-      "A health technology platform whose growth depended on clearing enterprise security review faster.",
-    challenges: [
-      "Lengthy security questionnaires consuming engineering time.",
-      "Handling requirements varying by customer.",
-      "Procurement cycles extending well beyond forecast.",
-    ],
-    approach: [
-      "Certified against the frameworks enterprise buyers ask for first.",
-      "Built a reusable response pack for security questionnaires.",
-      "Took on customer security calls directly alongside the team.",
+      "Built a CMMC 2 compliance roadmap aligned with FedRAMP controls.",
+      "Implemented SOC operations and 24/7 monitoring.",
+      "Established CUI handling procedures and trained the entire team.",
+      "Prepared a comprehensive C3PAO audit package.",
+      "Achieved CMMC 2 Level 2 certification in 120 days, closing the government contract.",
     ],
   },
 ];

@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HoverSwapText from "@/components/HoverSwapText";
-import ScrollFillText from "@/components/ScrollFillText";
+import TypingText from "@/components/TypingText";
 
 type Ripple = { id: number; x: number; y: number };
 
@@ -47,6 +47,7 @@ export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const [ripples, setRipples] = useState<Ripple[]>([]);
   const nextId = useRef(0);
+  const [typed, setTyped] = useState(false);
 
   function handleClick(e: React.MouseEvent<HTMLDivElement>) {
     const rect = heroRef.current?.getBoundingClientRect();
@@ -88,12 +89,18 @@ export default function Hero() {
           />
         ))}
 
-        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 pt-16 sm:justify-end sm:px-6 sm:pt-0 lg:px-8">
-          <ScrollFillText
-            as="h1"
-            text={"Scaling fast?\nAthenisec scales your security."}
-            className="font-heading max-w-4xl pb-8 text-4xl leading-[1.1] font-medium tracking-[-0.03em] text-white sm:pb-14 sm:text-5xl lg:text-6xl xl:text-7xl"
-          />
+        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 pt-28 sm:justify-end sm:px-6 sm:pt-0 lg:px-8">
+          <h1 className="font-heading max-w-4xl pb-8 text-4xl leading-[1.1] font-medium tracking-[-0.03em] text-white sm:pb-14 sm:text-5xl lg:text-6xl xl:text-7xl">
+            <TypingText text="Scaling fast?" onDone={() => setTyped(true)} />
+            <br />
+            <span
+              className={`inline-block transition-opacity duration-500 ${
+                typed ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              Athenisec scales your security.
+            </span>
+          </h1>
 
           <div className="flex max-w-3xl flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
             <p className="max-w-sm text-base text-white/70">

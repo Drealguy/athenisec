@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ScrollFillText from "@/components/ScrollFillText";
@@ -53,7 +54,7 @@ export default function CaseStudies() {
 
                 <div>
                   <h3 className="font-heading text-xl font-medium tracking-[-0.03em] text-gray-900">
-                    {study.title}
+                    {study.brand}
                   </h3>
                   <p className="mt-3 max-w-lg text-sm leading-relaxed text-gray-500">
                     {study.description}
@@ -73,10 +74,20 @@ export default function CaseStudies() {
                 </div>
 
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
-                  <ImagePlaceholder
-                    label="800 × 600"
-                    className="h-full w-full"
-                  />
+                  {study.image ? (
+                    <Image
+                      src={study.image.src}
+                      alt={study.image.alt}
+                      fill
+                      sizes="(min-width: 1024px) 22rem, 100vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <ImagePlaceholder
+                      label="800 × 600"
+                      className="h-full w-full"
+                    />
+                  )}
                 </div>
               </div>
             </div>
