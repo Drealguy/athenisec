@@ -51,6 +51,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "Compliance for FinTech",
+  description: CONTENT.intro,
+  alternates: { canonical: "/who-we-serve/fintech" },
+};
+
 export default function FinTechPage() {
   return (
     <main className="flex-1">

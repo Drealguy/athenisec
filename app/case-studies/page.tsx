@@ -5,9 +5,10 @@ import { RevealGroup } from "@/components/Reveal";
 import { CASE_STUDIES } from "@/lib/case-studies";
 
 export const metadata = {
-  title: "Case Studies | Athenisec",
+  title: "Case Studies",
   description:
     "How Athenisec has helped companies in regulated industries achieve and maintain compliance.",
+  alternates: { canonical: "/case-studies" },
 };
 
 export default function CaseStudiesPage() {

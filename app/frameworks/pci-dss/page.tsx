@@ -62,6 +62,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "PCI DSS Compliance Services",
+  description: CONTENT.intro,
+  alternates: { canonical: "/frameworks/pci-dss" },
+};
+
 export default function PciDssPage() {
   return (
     <main className="flex-1">

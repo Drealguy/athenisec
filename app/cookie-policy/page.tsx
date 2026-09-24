@@ -3,8 +3,9 @@ import LegalPage, { type LegalSection } from "@/components/LegalPage";
 import CookieSettings from "@/components/CookieSettings";
 
 export const metadata = {
-  title: "Cookie Policy | Athenisec",
+  title: "Cookie Policy",
   description: "What cookies and similar technologies athenisec.com uses.",
+  alternates: { canonical: "/cookie-policy" },
 };
 
 const SECTIONS: LegalSection[] = [

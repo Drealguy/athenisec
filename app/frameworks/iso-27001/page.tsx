@@ -62,6 +62,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "ISO 27001 Certification Services",
+  description: CONTENT.intro,
+  alternates: { canonical: "/frameworks/iso-27001" },
+};
+
 export default function Iso27001Page() {
   return (
     <main className="flex-1">

@@ -62,6 +62,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "HIPAA Compliance Services",
+  description: CONTENT.intro,
+  alternates: { canonical: "/frameworks/hipaa" },
+};
+
 export default function HipaaPage() {
   return (
     <main className="flex-1">

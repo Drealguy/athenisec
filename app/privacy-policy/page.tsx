@@ -2,8 +2,9 @@ import Link from "next/link";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
 
 export const metadata = {
-  title: "Privacy Policy | Athenisec",
+  title: "Privacy Policy",
   description: "How Athenisec LLC collects, uses, and protects information.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 const SECTIONS: LegalSection[] = [

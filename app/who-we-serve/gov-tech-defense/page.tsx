@@ -51,6 +51,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "Compliance for Gov Tech & Defense",
+  description: CONTENT.intro,
+  alternates: { canonical: "/who-we-serve/gov-tech-defense" },
+};
+
 export default function GovTechDefensePage() {
   return (
     <main className="flex-1">

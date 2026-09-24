@@ -5,6 +5,10 @@ import IndustriesMarquee from "@/components/IndustriesMarquee";
 import CaseStudies from "@/components/CaseStudies";
 import CtaBanner from "@/components/CtaBanner";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function Home() {
   return (
     <main className="flex-1">

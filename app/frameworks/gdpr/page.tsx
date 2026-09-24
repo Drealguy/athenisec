@@ -62,6 +62,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "GDPR Compliance Services",
+  description: CONTENT.intro,
+  alternates: { canonical: "/frameworks/gdpr" },
+};
+
 export default function GdprPage() {
   return (
     <main className="flex-1">

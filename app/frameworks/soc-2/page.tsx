@@ -66,6 +66,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "SOC 2 Compliance Services",
+  description: CONTENT.intro,
+  alternates: { canonical: "/frameworks/soc-2" },
+};
+
 export default function Soc2Page() {
   return (
     <main className="flex-1">

@@ -62,6 +62,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "CMMC 2.0 Compliance Services",
+  description: CONTENT.intro,
+  alternates: { canonical: "/frameworks/cmmc-2" },
+};
+
 export default function Cmmc2Page() {
   return (
     <main className="flex-1">

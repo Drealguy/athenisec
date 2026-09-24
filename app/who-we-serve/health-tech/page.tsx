@@ -51,6 +51,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "Compliance for Health Tech",
+  description: CONTENT.intro,
+  alternates: { canonical: "/who-we-serve/health-tech" },
+};
+
 export default function HealthTechPage() {
   return (
     <main className="flex-1">

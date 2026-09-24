@@ -51,6 +51,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "Compliance for Enterprise Tech",
+  description: CONTENT.intro,
+  alternates: { canonical: "/who-we-serve/enterprise-saas" },
+};
+
 export default function EnterpriseSaaSPage() {
   return (
     <main className="flex-1">

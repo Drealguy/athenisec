@@ -51,6 +51,12 @@ const CONTENT = {
   ],
 };
 
+export const metadata = {
+  title: "Compliance for B2B SaaS",
+  description: CONTENT.intro,
+  alternates: { canonical: "/who-we-serve/b2b-saas" },
+};
+
 export default function B2BSaaSPage() {
   return (
     <main className="flex-1">

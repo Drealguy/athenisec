@@ -2,8 +2,9 @@ import Link from "next/link";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
 
 export const metadata = {
-  title: "Terms of Service | Athenisec",
+  title: "Terms of Service",
   description: "Terms governing use of the athenisec.com website.",
+  alternates: { canonical: "/terms-of-service" },
 };
 
 const SECTIONS: LegalSection[] = [
